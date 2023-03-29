@@ -1,0 +1,14 @@
+version: "3"
+services:
+  postgres:
+    image: "postgres:15.2-alpine"
+    container_name: depixen-postgres
+    ports:
+      - "5439:5432"
+    environment:
+      POSTGRES_PASSWORD: depixen-pass
+      POSTGRES_DB: postgres
+    volumes:
+      - depixen-volume:/var/lib/postgresql/data
+volumes:
+  depixen-volume:
